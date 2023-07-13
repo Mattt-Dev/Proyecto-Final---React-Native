@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { colors } from "../Global/colors";
+import { useFonts } from "expo-font";
 
 const Header = () => {
   return (
@@ -20,9 +21,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+
   headerText: {
     color: "white",
-    fontWeight: "bold",
-    fontSize: 20,
+    marginTop: 15,
+    fontSize: 24,
+    fontFamily: "Prompt-BoldItalic",
   },
 });

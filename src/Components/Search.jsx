@@ -1,19 +1,19 @@
 import { StyleSheet, Text, View, TextInput, Pressable } from "react-native";
-import React from "react";
-import { AntDesign } from "@expo/vector-icons";
+import React, { useState } from "react";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
+import { colors } from "../Global/colors";
 
-const Search = ({ onSearch, error = "", goBack }) => {
-
-  const [keyword, setKeyword] = React.useState("");
+const Search = ({ onSearch, error, goBack }) => {
+  const [keyword, setKeyword] = useState("");
 
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.input}
         placeholder="Search"
+        placeholderTextColor={"lightgray"}
         value={keyword}
         onChangeText={setKeyword}
       />
@@ -34,18 +34,20 @@ const Search = ({ onSearch, error = "", goBack }) => {
 export default Search;
 
 const styles = StyleSheet.create({
-    container: {
-    flexDirection: "row",  
+  container: {
+    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     height: "10%",
-    gap: 18
-    },
-    
-    input: {
+    gap: 18,
+  },
+
+  input: {
     width: 200,
-      padding: 8,
-      fontSize: 18,
-      backgroundColor: "white",
+    padding: 8,
+    fontSize: 18,
+    backgroundColor: colors.grey,
     borderRadius: 8,
-}});
+    color: "white",
+  },
+});

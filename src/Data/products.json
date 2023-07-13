@@ -1,21 +1,25 @@
  [
     {
       "id": 1,
-      "title": "Battlezone Zero",
+      "title": "Battlezone",
       "description": "Embark on an epic sci-fi adventure as you pilot your armored tank through treacherous alien landscapes. Engage in intense battles, upgrade your arsenal, and save the galaxy from impending doom.",
       "price": 59.99,
       "stock": 10,
       "brand": "Nebula Interactive",
-      "category": "Action"
+      "category": "Action",
+      "image": "../Assets/Images/Battlezone.jpg"
+       
     },
     {
       "id": 2,
-      "title": "Lost Realms",
+      "title": "Hero Realms",
       "description": "Uncover the secrets of a mystical ancient civilization in this captivating adventure. Solve intricate puzzles, explore breathtaking landscapes, and reveal the truth that has been hidden for centuries.",
       "price": 49.99,
       "stock": 5,
       "brand": "Enigma Studios",
-      "category": "Adventure"
+      "category": "Adventure",
+      "image": "../Assets/Images/HeroRealms.jpg"
+
     },
     {
       "id": 3,
@@ -24,16 +28,20 @@
       "price": 39.99,
       "stock": 15,
       "brand": "Mythic Realms",
-      "category": "Role-Playing"
+      "category": "Role-Playing",
+      "image": "../Assets/Images/ChronoQuest.jpg"
+      
     },
     {
       "id": 4,
-      "title": "CosmoCraft",
+      "title": "MineCraft",
       "description": "Build and manage your own intergalactic civilization in this highly realistic space simulation game. Explore uncharted galaxies, colonize planets, and engage in epic space battles.",
       "price": 69.99,
       "stock": 8,
       "brand": "Stellar Dynamics",
-      "category": "Simulation"
+      "category": "Simulation",
+      "image": "../Assets/Images/Minecraft.jpg"
+
     },
     {
       "id": 5,
@@ -42,7 +50,9 @@
       "price": 29.99,
       "stock": 20,
       "brand": "Hoops Interactive",
-      "category": "Sports"
+      "category": "Sports",
+      "image": "../Assets/Images/SlamDunk.jpg"
+
     },
     {
       "id": 6,
@@ -51,7 +61,9 @@
       "price": 49.99,
       "stock": 3,
       "brand": "Imperial Games",
-      "category": "Strategy"
+      "category": "Strategy",
+      "image": "../Assets/Images/EmpireRising.jpg"
+
     },
     {
       "id": 7,
@@ -60,34 +72,42 @@
       "price": 34.99,
       "stock": 12,
       "brand": "ByteBreak Games",
-      "category": "Action"
+      "category": "Action",
+      "image" : "../Assets/Images/CyberStrike.jpg"
+
     },
     {
       "id": 8,
-      "title": "Tales of Eliria",
+      "title": "Chronicles of Eliria",
       "description": "Embark on a captivating journey through a fantasy world filled with mythical creatures, ancient prophecies, and dark forces. Your choices will shape the destiny of Eliria.",
       "price": 44.99,
       "stock": 18,
       "brand": "Enchanted Realms",
-      "category": "Role-Playing"
+      "category": "Role-Playing",
+      "image" : "../Assets/Images/ChroniclesOfEliria.jpg"
+
     },
     {
       "id": 9,
-      "title": "Velocity Racer",
+      "title": "Velocity Legends",
       "description": "Take control of high-speed futuristic vehicles and compete in adrenaline-fueled races across dazzling cityscapes. Push the limits of speed and become the ultimate racing champion.",
       "price": 39.99,
       "stock": 2,
       "brand": "Quantum Dynamics",
-      "category": "Simulation"
+      "category": "Simulation",
+      "image" : "../Assets/Images/VelocityLegends.jpg"
+
     },
     {
       "id": 10,
-      "title": "Superstar Soccer Manager",
+      "title": "Soccer Manager",
       "description": "As the manager of a professional soccer team, it's up to you to scout talent, devise winning strategies, and lead your club to championship glory in this immersive sports management game.",
       "price": 59.99,
       "stock": 14,
       "brand": "GoalMaster Studios",
-      "category": "Sports"
+      "category": "Sports",
+      "image" : "../Assets/Images/SoccerManager.jpg"
+
     },
     {
       "id": 11,
@@ -96,7 +116,9 @@
       "price": 54.99,
       "stock": 7,
       "brand": "Crown Interactive",
-      "category": "Strategy"
+      "category": "Strategy",
+      "image" : "../Assets/Images/MedievalConquest.jpg"
+
     },
     {
       "id": 12,
@@ -105,7 +127,9 @@
       "price": 29.99,
       "stock": 5,
       "brand": "Shadow Games",
-      "category": "Action"
+      "category": "Action",
+      "image" : "../Assets/Images/NinjaBlade.jpg"
+      
     },
     {
       "id": 13,
@@ -114,24 +138,30 @@
       "price": 49.99,
       "stock": 9,
       "brand": "AquaQuest Studios",
-      "category": "Adventure"
+      "category": "Adventure",
+      "image" : "../Assets/Images/LegacyOfAtlantis.jpg"
+
     },
     {
       "id": 14,
-      "title": "Sorcerer's Saga",
+      "title": "Sorcery Saga",
       "description": "Harness the power of arcane magic as you embark on an epic quest to defeat an ancient evil. Unleash devastating spells, gather allies, and restore balance to the realm.",
       "price": 39.99,
       "stock": 16,
       "brand": "Mystic Arts",
-      "category": "Role-Playing"
+      "category": "Role-Playing",
+      "image" : "../Assets/Images/SorcerySaga.jpg"
+
     },
     {
       "id": 15,
-      "title": "Galactic Armada",
+      "title": "Space Armada",
       "description": "Command a fleet of interstellar spaceships and engage in massive space battles in this tactical strategy game. Conquer new star systems, research advanced technologies, and dominate the galaxy.",
       "price": 69.99,
       "stock": 11,
       "brand": "StarCommand Games",
-      "category": "Strategy"
+      "category": "Strategy",
+      "image": "../Assets/Images/SpaceArmada.jpg"
+
     }
   ]

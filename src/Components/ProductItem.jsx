@@ -3,14 +3,15 @@ import React from "react";
 import Card from "./Card";
 
 const ProductItem = ({ item }) => {
+
   return (
     <Card additionalStyle={styles.additionalStylesCard}>
       <Text style={styles.textCategory}>{item.title}</Text>
-      {/* <Image
+      <Image
         resizeMode="cover"
         style={styles.image}
-        source={{ uri: item.images[0] }}
-      /> */}
+        source={{uri: item.image}}
+      />
     </Card>
   );
 };
@@ -19,13 +20,18 @@ export default ProductItem;
 
 const styles = StyleSheet.create({
   image: {
-    height: 120,
+    height: 100,
     width: 100,
     borderRadius: 8,
   },
   additionalStylesCard: {
     flexDirection: "row",
     height: 120,
-    justifyContent: "space-between",
+    // justifyContent: "space-evenly",
   },
+  textCategory: {
+    fontFamily: "Prompt-Regular",
+    fontSize: 16,
+    padding: 8,
+  }
 });

@@ -1,9 +1,8 @@
-import { StyleSheet, Text, View, FlatList } from "react-native";
-import React, { useState , useEffect } from "react";
-import productsRaw from "../Data/products.json";
+import React, { useEffect, useState } from "react";
+import { FlatList, StyleSheet, View } from "react-native";
 import ProductItem from "../Components/ProductItem";
 import Search from "../Components/Search";
-import {colors} from "../Global/colors";
+import productsRaw from "../Data/products.json";
 
 const ItemListCategory = ({ category, setCategory }) => {
   const [categorySelected, setCategorySelected] = useState(category);
