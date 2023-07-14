@@ -10,7 +10,7 @@ const ProductItem = ({ item }) => {
       <Image
         resizeMode="cover"
         style={styles.image}
-        source={{uri: item.image}}
+        source={item.image}
       />
     </Card>
   );
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   additionalStylesCard: {
     flexDirection: "row",
     height: 120,
-    // justifyContent: "space-evenly",
+    justifyContent: "space-evenly",
   },
   textCategory: {
     fontFamily: "Prompt-Regular",

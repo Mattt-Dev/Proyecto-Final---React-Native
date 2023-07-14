@@ -2,18 +2,18 @@ import React, { useEffect, useState } from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 import ProductItem from "../Components/ProductItem";
 import Search from "../Components/Search";
-import productsRaw from "../Data/products.json";
+import productsData from "../Data/productsData";
 
 const ItemListCategory = ({ category, setCategory }) => {
   const [categorySelected, setCategorySelected] = useState(category);
-  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const [keyword, setKeyword] = useState("");
   const [keywordError, setKeywordError] = useState("");
 
   useEffect(() => {
-    const productsFiltered = productsRaw.filter(
-      product => product.category === categorySelected && product.title.toLocaleLowerCase().includes(keyword.toLowerCase()))
-    setProducts(productsFiltered);
+    const productsFiltered = productsData.filter(
+     (product) => product.category === categorySelected && product.title.toLocaleLowerCase().includes(keyword.toLowerCase()))
+    setFilteredProducts(productsFiltered);
   }, [categorySelected, keyword]);
 
   const onSearch = (input) => {
@@ -33,9 +33,9 @@ const ItemListCategory = ({ category, setCategory }) => {
       <View style={styles.container}>
           <Search onSearch={onSearch} error={keywordError} goBack={() => setCategory("")} />
           <FlatList
-              data={products}
-              keyExtractor={product => product.id}
-              renderItem={({ item }) => ProductItem({ item })}
+              data={filteredProducts}
+              keyExtractor={(product) => product.id}
+              renderItem={({ item }) => <ProductItem item={item} />}
               showsVerticalScrollIndicator={false}
           />
     </View>
