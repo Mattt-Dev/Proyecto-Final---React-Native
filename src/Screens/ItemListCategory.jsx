@@ -4,7 +4,7 @@ import ProductItem from "../Components/ProductItem";
 import Search from "../Components/Search";
 import productsData from "../Data/productsData";
 
-const ItemListCategory = ({ category, setCategory }) => {
+const ItemListCategory = ({ category, setCategory, setProductSelected }) => {
   const [categorySelected, setCategorySelected] = useState(category);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [keyword, setKeyword] = useState("");
@@ -35,7 +35,7 @@ const ItemListCategory = ({ category, setCategory }) => {
           <FlatList
               data={filteredProducts}
               keyExtractor={(product) => product.id}
-              renderItem={({ item }) => <ProductItem item={item} />}
+              renderItem={({ item }) => <ProductItem item={item} setProductSelected={setProductSelected} setCategorySelected={setCategory}/>}
               showsVerticalScrollIndicator={false}
           />
     </View>
@@ -46,7 +46,7 @@ export default ItemListCategory;
 
 const styles = StyleSheet.create({
     container: {
-        height: "90%",
+        height: "85%",
         backgroundColor: "white",
         alignItems: "center",
 }});

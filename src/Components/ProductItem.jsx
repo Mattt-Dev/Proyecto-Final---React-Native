@@ -1,18 +1,29 @@
-import { Image, StyleSheet, Text } from "react-native";
+import { Image, StyleSheet, Text, useWindowDimensions, Pressable } from "react-native";
 import React from "react";
 import Card from "./Card";
 
-const ProductItem = ({ item }) => {
+const ProductItem = ({ item, setProductSelected, setCategorySelected }) => {
+
+  const { height, width } = useWindowDimensions();
+
+  const onSelect = (id) => {
+    setProductSelected(id);
+    setCategorySelected("")
+  }
+
+  console.log(height, width);
 
   return (
-    <Card additionalStyle={styles.additionalStylesCard}>
-      <Text style={styles.textCategory}>{item.title}</Text>
-      <Image
-        resizeMode="cover"
-        style={styles.image}
-        source={item.image}
-      />
-    </Card>
+    <Pressable onPress={() => onSelect(item.id)}>
+      <Card additionalStyle={styles.additionalStylesCard}>
+        <Text style={styles.textCategory}>{item.title}</Text>
+        <Image
+          resizeMode="cover"
+          style={styles.image}
+          source={item.image}
+        />
+      </Card>
+    </Pressable>
   );
 };
 
@@ -23,6 +34,7 @@ const styles = StyleSheet.create({
     height: 100,
     width: 100,
     borderRadius: 8,
+    width: "30%"
   },
   additionalStylesCard: {
     flexDirection: "row",
@@ -33,5 +45,6 @@ const styles = StyleSheet.create({
     fontFamily: "Prompt-Regular",
     fontSize: 16,
     padding: 8,
+    width: "60%"
   }
 });
