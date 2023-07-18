@@ -2,16 +2,13 @@ import { Image, StyleSheet, Text, useWindowDimensions, Pressable } from "react-n
 import React from "react";
 import Card from "./Card";
 
-const ProductItem = ({ item, setProductSelected, setCategorySelected }) => {
+const ProductItem = ({ item, navigation }) => {
 
   const { height, width } = useWindowDimensions();
 
   const onSelect = (id) => {
-    setProductSelected(id);
-    setCategorySelected("")
+    navigation.navigate('Detail', {productId: item.id});
   }
-
-  console.log(height, width);
 
   return (
     <Pressable onPress={() => onSelect(item.id)}>

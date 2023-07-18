@@ -4,17 +4,23 @@ import ProductItem from "../Components/ProductItem";
 import Search from "../Components/Search";
 import productsData from "../Data/productsData";
 
-const ItemListCategory = ({ category, setCategory, setProductSelected }) => {
-  const [categorySelected, setCategorySelected] = useState(category);
+const ItemListCategory = ({ navigation, route }) => {
+  const { category } = route.params;
+
+  console.log(category);
+
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [keyword, setKeyword] = useState("");
   const [keywordError, setKeywordError] = useState("");
 
   useEffect(() => {
     const productsFiltered = productsData.filter(
-     (product) => product.category === categorySelected && product.title.toLocaleLowerCase().includes(keyword.toLowerCase()))
+      (product) =>
+        product.category === category &&
+        product.title.toLocaleLowerCase().includes(keyword.toLowerCase())
+    );
     setFilteredProducts(productsFiltered);
-  }, [categorySelected, keyword]);
+  }, [category, keyword]);
 
   const onSearch = (input) => {
     const expression = /^[a-zA-Z0-9\ ]*$/;
@@ -30,14 +36,16 @@ const ItemListCategory = ({ category, setCategory, setProductSelected }) => {
   };
 
   return (
-      <View style={styles.container}>
-          <Search onSearch={onSearch} error={keywordError} goBack={() => setCategory("")} />
-          <FlatList
-              data={filteredProducts}
-              keyExtractor={(product) => product.id}
-              renderItem={({ item }) => <ProductItem item={item} setProductSelected={setProductSelected} setCategorySelected={setCategory}/>}
-              showsVerticalScrollIndicator={false}
-          />
+    <View style={styles.container}>
+      <Search onSearch={onSearch} error={keywordError} goBack={() => navigation.goBack()} />
+      <FlatList
+        data={filteredProducts}
+        keyExtractor={(product) => product.id}
+        renderItem={({ item }) => (
+          <ProductItem item={item} navigation={navigation} />
+        )}
+        showsVerticalScrollIndicator={false}
+      />
     </View>
   );
 };
@@ -45,8 +53,10 @@ const ItemListCategory = ({ category, setCategory, setProductSelected }) => {
 export default ItemListCategory;
 
 const styles = StyleSheet.create({
-    container: {
-        height: "85%",
-        backgroundColor: "white",
-        alignItems: "center",
-}});
+  container: {
+    height: "100%",
+    marginTop: 20,
+    backgroundColor: "white",
+    alignItems: "center",
+  },
+});

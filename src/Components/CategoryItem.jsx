@@ -3,9 +3,9 @@ import React from "react";
 import Card from "./Card";
 import { useFonts } from "expo-font";
 
-const CategoryItem = ({ item, setCategorySelected }) => {
+const CategoryItem = ({ item, navigation }) => {
   return (
-    <Pressable onPress={() => setCategorySelected(item)}>
+    <Pressable onPress={() => navigation.navigate("ItemListCategory", {category: item})}>
       <Card>
         <Text style={styles.textCategory}>{item}</Text>
       </Card>

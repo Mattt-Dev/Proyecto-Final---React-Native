@@ -1,9 +1,11 @@
 import { StyleSheet, Text, View, Button, Image, useWindowDimensions } from "react-native";
 import React, { useEffect, useState } from "react";
 import allProducts from "../Data/productsData";
+import { colors } from "../Global/colors";
 
-const ItemDetail = ({ idSelected, setProductSelected }) => {
-  console.log(idSelected);
+const ItemDetail = ({navigation, route }) => {
+
+const {productId: idSelected} = route.params
 
   const [product, setProduct] = useState({});
   const [orientation, setOrientation] = useState("portrait");
@@ -27,15 +29,15 @@ const ItemDetail = ({ idSelected, setProductSelected }) => {
 
   return (
     <View>
-      <Button onPress={() => setProductSelected("")} title="Go Back" style={styles.goBack}/>
+      <Button onPress={() => navigation.goBack()} title="Go Back" style={styles.goBack}/>
       {product ? <View style={orientation === "portrait" ? styles.mainContainer : styles.mainContainerLandscape}>
         <Image source={product.image} rezizeMode="contain" style={styles.image} />
         <View style={styles.textContainer}>
           <Text>{product.title}</Text>
           <Text>{product.description}</Text>
           <Text>${product.price}</Text>
-          <Button title="Add Cart" />
         </View>
+          <Button title="Add Cart" style={styles.addToCart}/>
       </View>
         : null}
     </View>
@@ -46,29 +48,33 @@ export default ItemDetail;
 
 const styles = StyleSheet.create({
   goBack: {
-  maxWidth: 100,
-},
+    alignItems: "center",
+  },
   mainContainer: {
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "flex-start",
-    margin: 10,
-    height: "75%",
-
-
+    alignItems: "center",
+    marginTop: 20,
+    height: "85%",
   },
   mainContainerLandscape: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     margin: 10,
-
   },
   textContainer: {
     flexDirection: "column",
-
+    alignItems: "center",
+    padding: 20,
+    marginBottom: 10,
   },
   image: {
     width: 320,
     height: 250,
-}});
+  },
+
+  addToCart: {
+    marginTop: 40,
+  },
+});
