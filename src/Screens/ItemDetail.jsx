@@ -1,7 +1,6 @@
-import { StyleSheet, Text, View, Button, Image, useWindowDimensions } from "react-native";
 import React, { useEffect, useState } from "react";
+import { Button, Image, StyleSheet, Text, View, useWindowDimensions } from "react-native";
 import allProducts from "../Data/productsData";
-import { colors } from "../Global/colors";
 
 const ItemDetail = ({navigation, route }) => {
 
@@ -29,15 +28,15 @@ const {productId: idSelected} = route.params
 
   return (
     <View>
-      <Button onPress={() => navigation.goBack()} title="Go Back" style={styles.goBack}/>
       {product ? <View style={orientation === "portrait" ? styles.mainContainer : styles.mainContainerLandscape}>
+      <Button onPress={() => navigation.goBack()} title="Go Back" style={styles.goBack}/>
         <Image source={product.image} rezizeMode="contain" style={styles.image} />
         <View style={styles.textContainer}>
           <Text>{product.title}</Text>
           <Text>{product.description}</Text>
           <Text>${product.price}</Text>
-        </View>
           <Button title="Add Cart" style={styles.addToCart}/>
+        </View>
       </View>
         : null}
     </View>
@@ -55,7 +54,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginTop: 20,
-    height: "85%",
   },
   mainContainerLandscape: {
     flexDirection: "row",
@@ -72,9 +70,10 @@ const styles = StyleSheet.create({
   image: {
     width: 320,
     height: 250,
+    marginTop: 20,
   },
 
   addToCart: {
-    marginTop: 40,
+    marginTop: 140,
   },
 });
