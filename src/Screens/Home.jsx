@@ -1,8 +1,7 @@
-import { StyleSheet, Text, View, FlatList } from "react-native";
 import React from "react";
-import categories from "../Data/categories.json";
-import { colors } from "../Global/colors";
+import { FlatList, StyleSheet, View } from "react-native";
 import CategoryItem from "../Components/CategoryItem";
+import categories from "../Data/categories.json";
 
 const Home = ({navigation}) => {
   return (
@@ -22,7 +21,6 @@ export default Home;
 
 const styles = StyleSheet.create({
   container: {
-    // height: "85%",
     backgroundColor: "white",
     alignItems: "center",
     justifyContent: "center",

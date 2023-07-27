@@ -1,7 +1,6 @@
-import { Pressable, StyleSheet, Text } from "react-native";
 import React from "react";
+import { Pressable, StyleSheet, Text } from "react-native";
 import Card from "./Card";
-import { useFonts } from "expo-font";
 
 const CategoryItem = ({ item, navigation }) => {
   return (
