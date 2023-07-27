@@ -1,6 +1,7 @@
 import { useFonts } from "expo-font";
-import { StyleSheet } from "react-native";
+import { Provider } from "react-redux";
 import Navigator from "./src/Navigation/Navigator";
+import store from "./src/Store/store";
 
 export default function App() {
 
@@ -14,8 +15,9 @@ export default function App() {
   }
 
   return (
-   <Navigator/>
+    <Provider store={store}>
+      <Navigator />
+    </Provider>
   );
 }
 
-const styles = StyleSheet.create();

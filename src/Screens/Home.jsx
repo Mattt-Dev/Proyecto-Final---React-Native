@@ -10,7 +10,9 @@ const Home = ({navigation}) => {
         style={styles.list}
         data={categories}
         keyExtractor={(category) => category}
-        renderItem={({ item }) => CategoryItem({ item, navigation })}
+        renderItem={({ item }) => (
+          <CategoryItem item={item} navigation={navigation} />
+        )}
         showsVerticalScrollIndicator={false}
       />
     </View>

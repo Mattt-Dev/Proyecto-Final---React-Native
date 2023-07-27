@@ -4,7 +4,7 @@ import CartStack from "./CartStack";
 import { colors } from "../Global/colors";
 
 import { NavigationContainer } from "@react-navigation/native";
-import { SafeAreaView, StatusBar, StyleSheet, View } from "react-native";
+import { Platform, SafeAreaView, StatusBar, StyleSheet, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { FontAwesome5, FontAwesome, Entypo } from "@expo/vector-icons";
 import OrderStack from "./OrderStack";

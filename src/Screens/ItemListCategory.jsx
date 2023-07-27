@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { FlatList, StyleSheet, View } from "react-native";
+import { useSelector } from "react-redux";
 import ProductItem from "../Components/ProductItem";
 import Search from "../Components/Search";
-import productsData from "../Data/productsData";
 
 const ItemListCategory = ({ navigation, route }) => {
   const { category } = route.params;
 
+    const productsSelected = useSelector(
+      (state) => state.shopReducer.value.productsSelected
+  );
+  
   console.log(category);
 
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -14,13 +18,12 @@ const ItemListCategory = ({ navigation, route }) => {
   const [keywordError, setKeywordError] = useState("");
 
   useEffect(() => {
-    const productsFiltered = productsData.filter(
-      (product) =>
-        product.category === category &&
+    const productsFiltered = productsSelected.filter(
+      product =>        
         product.title.toLocaleLowerCase().includes(keyword.toLowerCase())
     );
     setFilteredProducts(productsFiltered);
-  }, [category, keyword]);
+  }, [productsSelected, keyword]);
 
   const onSearch = (input) => {
     const expression = /^[a-zA-Z0-9\ ]*$/;
